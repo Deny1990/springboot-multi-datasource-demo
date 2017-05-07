@@ -2,6 +2,8 @@ package com.yuan.boot.controller;
 
 import com.yuan.boot.model.Student;
 import com.yuan.boot.service.StudentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,6 +17,7 @@ import java.util.List;
 @Controller
 public class StudentController
 {
+    Logger logger = LoggerFactory.getLogger(StudentController.class);
     @Resource
     StudentService studentService;
 
