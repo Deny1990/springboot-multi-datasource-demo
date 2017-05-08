@@ -1,4 +1,4 @@
-package com.yuan.boot.reactor;
+package com.yuan.boot.reactor.model;
 
 import java.util.Date;
 

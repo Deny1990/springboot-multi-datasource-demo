@@ -1,5 +1,7 @@
 package com.yuan.boot.reactor;
 
+import com.yuan.boot.reactor.model.Event;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
