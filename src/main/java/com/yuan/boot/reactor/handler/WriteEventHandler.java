@@ -22,6 +22,7 @@ public class WriteEventHandler extends EventHandler
 
     @Override
     public void handle(Event event) {
+        logger.info("the source is {}",event.getSource());
         // step 1: encode a message to byte[]
         // step 2: submit a write task to IOWorker thread pool
         logger.info("写事件");

@@ -1,7 +1,7 @@
 package com.yuan.boot.reactor.handler;
 
 import com.yuan.boot.reactor.Demultiplexer;
-import com.yuan.boot.reactor.EventType;
+import com.yuan.boot.reactor.model.EventType;
 import com.yuan.boot.reactor.model.Event;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +22,7 @@ public class ReadEventHandler extends EventHandler
 
     @Override
     public void handle(Event event) {
+        logger.info("the source is {}",event.getSource());
         // create channel with a pipeline
         // register the channel to this event dispatcher or a child event dispatcher
 

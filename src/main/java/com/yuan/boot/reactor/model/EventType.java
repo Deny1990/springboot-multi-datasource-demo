@@ -1,4 +1,4 @@
-package com.yuan.boot.reactor;
+package com.yuan.boot.reactor.model;
 
 /**
  * Created by yuanxin on 17/5/7.

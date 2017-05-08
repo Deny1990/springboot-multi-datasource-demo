@@ -2,6 +2,7 @@ package com.yuan.boot.reactor;
 
 import com.yuan.boot.reactor.handler.EventHandler;
 import com.yuan.boot.reactor.model.Event;
+import com.yuan.boot.reactor.model.EventType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
