@@ -2,6 +2,8 @@ package com.yuan.boot.reactor;
 
 import com.yuan.boot.reactor.handler.EventHandler;
 import com.yuan.boot.reactor.model.Event;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -12,6 +14,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class EventDispatcher
 {
+    Logger logger = LoggerFactory.getLogger(EventDispatcher.class);
+
     Map<EventType, EventHandler>
         eventHandlerMap = new ConcurrentHashMap<EventType, EventHandler>();
 
@@ -38,6 +42,7 @@ public class EventDispatcher
             List<Event> events = selector.select();
 
             for (Event event : events) {
+                logger.info("event 为{}",event.getType().name());
                 EventHandler eventHandler = eventHandlerMap.get(event.type);
                 eventHandler.handle(event);
             }

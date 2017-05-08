@@ -9,6 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created by yuanxin on 17/5/7.
+ * 同步的事件分离器。
  */
 public class Demultiplexer
 {
