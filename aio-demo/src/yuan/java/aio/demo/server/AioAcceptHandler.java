@@ -39,7 +39,7 @@ public class AioAcceptHandler implements CompletionHandler
 
     //不是CompletionHandler的方法
     public void startRead(AsynchronousSocketChannel socket) {
-        ByteBuffer clientBuffer = ByteBuffer.allocate(1024);
+        ByteBuffer clientBuffer = ByteBuffer.allocate(5);
         //read的原型是
         //read(ByteBuffer dst, A attachment,
         //    CompletionHandler<Integer,? super A> handler)
