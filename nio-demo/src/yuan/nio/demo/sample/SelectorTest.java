@@ -144,7 +144,6 @@ public class SelectorTest
                 }
 
             }
-
             System.out.println("going to clear");
             selectedKeys.clear();
             System.out.println("cleared");
