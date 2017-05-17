@@ -101,13 +101,11 @@ public class SelectorTest
                 if ((key.readyOps() & SelectionKey.OP_ACCEPT)
                     == SelectionKey.OP_ACCEPT)
                 {
-// Accept the new connection
                     System.out.println("Accept the new connection");
                     ServerSocketChannel ssc = (ServerSocketChannel)key.channel();
                     SocketChannel sc = ssc.accept();
                     sc.configureBlocking(false);
 
-// Add the new connection to the selector
                     System.out.println("Add the new connection to the selector");
                     SelectionKey newKey = sc.register(selector, SelectionKey.OP_READ);
                     it.remove();

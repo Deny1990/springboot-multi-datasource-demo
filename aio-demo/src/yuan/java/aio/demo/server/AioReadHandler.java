@@ -42,7 +42,7 @@ public class AioReadHandler implements CompletionHandler
             } catch (IOException e) {
                 e.printStackTrace();
             }
-//            socket.read(buf, buf, this);
+            socket.read(buf, buf, this);
             try {
                 write(socket);
             } catch (UnsupportedEncodingException ex) {

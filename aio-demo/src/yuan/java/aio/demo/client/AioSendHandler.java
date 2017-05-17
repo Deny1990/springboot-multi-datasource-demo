@@ -22,6 +22,7 @@ public class AioSendHandler implements CompletionHandler
     @Override
     public void completed(Integer i, ByteBuffer buf) {
         if (i > 0) {
+            System.out.println("helloworld");
             socket.write(buf, buf, this);
         } else if (i == -1) {
             try {
