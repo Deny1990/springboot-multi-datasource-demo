@@ -104,6 +104,7 @@ public class SelectorTest
                     System.out.println("Accept the new connection");
                     ServerSocketChannel ssc = (ServerSocketChannel)key.channel();
                     SocketChannel sc = ssc.accept();
+                    System.out.println("sc hashcode is "+sc.hashCode());
                     sc.configureBlocking(false);
 
                     System.out.println("Add the new connection to the selector");

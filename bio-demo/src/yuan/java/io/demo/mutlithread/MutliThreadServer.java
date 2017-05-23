@@ -22,6 +22,7 @@ public class MutliThreadServer
             while (true)
             {
                 socket = serverSocket.accept();
+                System.out.println("socket hashcode is "+socket.hashCode());
                 count++;
                 ServerThread serverThread = new ServerThread(count,socket);
                 serverThread.start();
