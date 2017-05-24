@@ -12,6 +12,10 @@ public class Apple
 
     private long weight;
 
+    public Apple(String color,long weight){
+        this.color = color;
+        this.weight = weight;
+    }
     public long getWeight()
     {
         return weight;
@@ -32,16 +36,18 @@ public class Apple
         this.color = color;
     }
 
-    public static List<Apple> filterGreenApples(List<Apple> inventory,String color)
+    public static List<Apple> filterGreenApples(List<Apple> inventory, String color)
     {
 
         List<Apple> result = new ArrayList<>();
         for (Apple apple : inventory)
         {
-            if(color.equals(apple.getColor())){
+            if (color.equals(apple.getColor()))
+            {
                 result.add(apple);
             }
         }
         return result;
     }
+
 }
