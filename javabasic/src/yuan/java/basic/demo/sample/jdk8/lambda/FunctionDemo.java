@@ -1,5 +1,7 @@
 package yuan.java.basic.demo.sample.jdk8.lambda;
 
+import yuan.java.basic.demo.sample.jdk8.parameterization.Apple;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -50,11 +52,16 @@ public class FunctionDemo
         System.out.println(carId);
 
         BooleanSupplier booleanSupplier = ()->{return true;};
-
         boolean isTrue = booleanSupplier.getAsBoolean();
         System.out.println(isTrue);
 
-
+       ToIntBiFunction<Car,Apple> toIntBiFunction = (Car carOne,Apple apple) ->{
+           int carOneId = carOne.getCardId();
+           int  weight=(int) apple.getWeight();
+          return carOneId+weight;
+       };
+        int toInt = toIntBiFunction.applyAsInt(new Car(888),new Apple("red",77));
+        System.out.println(toInt);
 
     }
 }
