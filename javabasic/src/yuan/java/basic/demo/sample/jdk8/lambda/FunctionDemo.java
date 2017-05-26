@@ -3,17 +3,18 @@ package yuan.java.basic.demo.sample.jdk8.lambda;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
+import java.util.function.*;
 
 /**
  * Created by yuanxin on 17/5/25.
  */
 public class FunctionDemo
 {
-    public  static <T,R> List<R> map(List<T> list ,Function<T,R> f){
+    public static <T, R> List<R> map(List<T> list, Function<T, R> f)
+    {
         List<R> result = new ArrayList<>();
-        for (T t: list
-             )
+        for (T t : list
+            )
         {
             result.add(f.apply(t));
         }
@@ -22,7 +23,38 @@ public class FunctionDemo
 
     public static void main(String[] args)
     {
-        List<Integer> integerList = map(Arrays.asList("hello","worlddd","womenn"),(String s) -> s.length());
+        List<Integer> integerList = map(Arrays.asList("hello", "worlddd", "womenn"), (String s) -> s.length());
         integerList.stream().forEach(System.out::println);
+        IntPredicate evenNumbers = (int i) -> i % 2 == 0;
+        evenNumbers.test(1000);
+        Predicate<Integer> oddNumvers = (Integer i) -> i % 2 == 0;
+        oddNumvers.test(1000);
+
+        IntToDoubleFunction intToDouble = (int i) -> {
+            return i * 2;
+        };
+        double testDouble = intToDouble.applyAsDouble(3);
+        System.out.println(testDouble);
+
+        IntConsumer intConsumer = (int i) -> System.out.println(i);
+        intConsumer.accept(5);
+
+        IntFunction<Car> intFunction = (int i) -> {
+            return new Car(i);
+        };
+        Car car = intFunction.apply(1);
+        System.out.println(car.getCardId());
+
+        ToDoubleFunction<Car> toDoubleFunction = (Car carTwo) -> carTwo.getCardId();
+        double carId = toDoubleFunction.applyAsDouble(new Car(8));
+        System.out.println(carId);
+
+        BooleanSupplier booleanSupplier = ()->{return true;};
+
+        boolean isTrue = booleanSupplier.getAsBoolean();
+        System.out.println(isTrue);
+
+
+
     }
 }
