@@ -32,7 +32,6 @@ public class FunctionDemo
         Predicate<Integer> oddNumvers = (Integer i) -> i % 2 == 0;
         oddNumvers.test(1000);
 
-
     }
 
     public void testIntConsumer()
@@ -57,7 +56,8 @@ public class FunctionDemo
         System.out.println(carId);
     }
 
-    public void testIntToDoubleFunction(){
+    public void testIntToDoubleFunction()
+    {
         IntToDoubleFunction intToDouble = (int i) -> {
             return i * 2;
         };
@@ -65,7 +65,8 @@ public class FunctionDemo
         System.out.println(testDouble);
     }
 
-    public void testBooleanSupplier(){
+    public void testBooleanSupplier()
+    {
         BooleanSupplier booleanSupplier = () -> {
             return true;
         };
@@ -73,13 +74,21 @@ public class FunctionDemo
         System.out.println(isTrue);
     }
 
-    public void testToIntBiFunction(){
-        ToIntBiFunction<Car, Apple> toIntBiFunction = (Car carOne, Apple apple) -> {
-            int carOneId = carOne.getCardId();
-            int weight = (int)apple.getWeight();
-            return carOneId + weight;
-        };
+    public void testToIntBiFunction()
+    {
+
+        ToIntBiFunction<Car, Apple> toIntBiFunction = FunctionDemo :: test;
         int toInt = toIntBiFunction.applyAsInt(new Car(888), new Apple("red", 77));
         System.out.println(toInt);
+
     }
+
+    public static int test(Car carOne, Apple apple)
+    {
+        int carOneId = carOne.getCardId();
+        int weight = (int)apple.getWeight();
+        return carOneId + weight;
+    }
+
+
 }
