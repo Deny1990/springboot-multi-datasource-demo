@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by yuanxin on 17/5/24.
+ * Created by yuanxin on 17/5/24
  */
 public class Apple
 {
     private String color;
 
-    private long weight;
+    private Long weight;
 
     public Apple(String color,long weight){
         this.color = color;
         this.weight = weight;
     }
-    public long getWeight()
+    public Long getWeight()
     {
         return weight;
     }
@@ -38,6 +38,7 @@ public class Apple
 
     public static List<Apple> filterGreenApples(List<Apple> inventory, String color)
     {
+
 
         List<Apple> result = new ArrayList<>();
         for (Apple apple : inventory)
