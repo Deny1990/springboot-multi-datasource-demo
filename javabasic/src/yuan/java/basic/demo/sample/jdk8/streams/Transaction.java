@@ -7,7 +7,7 @@ public class Transaction
 {
     private  Trader trader;
     private  int year;
-    private  int value;
+    private  Integer value;
 
     public Transaction(Trader trader, int year, int value)
     {
@@ -26,12 +26,12 @@ public class Transaction
         this.trader = trader;
     }
 
-    public int getYear()
+    public Integer getYear()
     {
         return year;
     }
 
-    public void setYear(int year)
+    public void setYear(Integer year)
     {
         this.year = year;
     }
