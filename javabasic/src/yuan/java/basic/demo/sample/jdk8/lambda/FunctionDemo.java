@@ -77,16 +77,16 @@ public class FunctionDemo
     public void testToIntBiFunction()
     {
 
-        ToIntBiFunction<Car, Apple> toIntBiFunction = FunctionDemo :: test;
-        int toInt = toIntBiFunction.applyAsInt(new Car(888), new Apple("red", 77));
+        ToLongBiFunction<Car, Apple> toIntBiFunction = FunctionDemo :: test;
+        long toInt = toIntBiFunction.applyAsLong(new Car(888), new Apple("red", 77l));
         System.out.println(toInt);
 
     }
 
-    public static int test(Car carOne, Apple apple)
+    public static long test(Car carOne, Apple apple)
     {
         int carOneId = carOne.getCardId();
-        int weight = (int)apple.getWeight();
+        long weight = (long)apple.getWeight();
         return carOneId + weight;
     }
 

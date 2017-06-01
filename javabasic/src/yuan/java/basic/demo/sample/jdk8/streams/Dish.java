@@ -61,4 +61,12 @@ public class Dish
         this.type = type;
     }
 
+    @Override
+    public String toString()
+    {
+        final StringBuffer sb = new StringBuffer("Dish{");
+        sb.append("name='").append(name).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }
