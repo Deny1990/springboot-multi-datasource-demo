@@ -1,8 +1,6 @@
 package yuan.java.basic.demo.sample.jdk8.streams;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by yuanxin on 17/6/1.
@@ -26,7 +24,7 @@ public class CollectionOperation
         numbers.stream().reduce(1,Integer ::sum);
     }
 
-    private void testCollection(){
+    private static void testCollection(){
         List<String> taCodeList =  new ArrayList<>();
         taCodeList.add("0005");
         DisSubCompanyModel subCompanyModel = new DisSubCompanyModel();
@@ -40,6 +38,18 @@ public class CollectionOperation
         List<DisSubCompanyModel> list = new ArrayList<>();
         list.add(subCompanyModel);
         list.add(subCompanyModelTwo);
+
+        List<String> inlist = new ArrayList<>();
+        Set<String> stirngs =  list.stream().map(disSubCompanyModel -> {return new HashSet<>(disSubCompanyModel.getTaCodeList());})
+                .reduce(new HashSet<String>(),(set1,set2)->{
+                    set1.addAll(set2);
+                    return set2;
+        });
+        stirngs.stream().forEach(System.out::println);
+    }
+
+    public static void main(String[] args) {
+        testCollection();
     }
 
 }
