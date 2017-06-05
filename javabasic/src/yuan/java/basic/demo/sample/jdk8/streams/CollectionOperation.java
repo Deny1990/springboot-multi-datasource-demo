@@ -1,5 +1,6 @@
 package yuan.java.basic.demo.sample.jdk8.streams;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,6 +24,22 @@ public class CollectionOperation
     private void testSum(){
         List<Integer> numbers = Arrays.asList(1,2,3,4,5);
         numbers.stream().reduce(1,Integer ::sum);
+    }
+
+    private void testCollection(){
+        List<String> taCodeList =  new ArrayList<>();
+        taCodeList.add("0005");
+        DisSubCompanyModel subCompanyModel = new DisSubCompanyModel();
+        subCompanyModel.setSubCompanyNo("10000");
+        subCompanyModel.setTaCodeList(taCodeList);
+
+        DisSubCompanyModel subCompanyModelTwo = new DisSubCompanyModel();
+        subCompanyModelTwo.setSubCompanyNo("10000");
+        subCompanyModelTwo.setTaCodeList(taCodeList);
+
+        List<DisSubCompanyModel> list = new ArrayList<>();
+        list.add(subCompanyModel);
+        list.add(subCompanyModelTwo);
     }
 
 }
