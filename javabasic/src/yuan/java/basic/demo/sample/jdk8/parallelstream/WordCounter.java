@@ -57,7 +57,7 @@ public class WordCounter
         return counter;
     }
 
-    private int countWords(Stream<Character> stream)
+    public static int countWords(Stream<Character> stream)
     {
         WordCounter wordCounter =
             stream.reduce(new WordCounter(0, true),
