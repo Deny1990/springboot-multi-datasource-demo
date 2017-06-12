@@ -1,4 +1,4 @@
-package yuan.java.basic.demo.sample.jdk8.strategy;
+package yuan.java.basic.demo.sample.jdk8.designpattern.strategy;
 
 /**
  * Created by yuan on 17/6/8.
