@@ -21,6 +21,7 @@ public class Quote
 
     public static Quote parse(String s)
     {
+        System.out.println("parse thread is "+Thread.currentThread());
         String[] split = s.split(":");
         String shopName = split[0];
         double price = Double.parseDouble(split[1]);
@@ -56,5 +57,16 @@ public class Quote
     public void setDiscountCode(Discount.Code discountCode)
     {
         this.discountCode = discountCode;
+    }
+
+    @Override
+    public String toString()
+    {
+        final StringBuffer sb = new StringBuffer("Quote{");
+        sb.append("shopName='").append(shopName).append('\'');
+        sb.append(", price=").append(price);
+        sb.append(", discountCode=").append(discountCode);
+        sb.append('}');
+        return sb.toString();
     }
 }

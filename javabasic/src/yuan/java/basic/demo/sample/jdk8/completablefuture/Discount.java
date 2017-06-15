@@ -22,6 +22,7 @@ public class Discount
 
     public static String applyDiscount(Quote quote)
     {
+        System.out.println("applyDisCount thread is "+Thread.currentThread());
         return quote.getShopName() + "price is " + Discount.apply(quote.getPrice(), quote.getDiscountCode());
     }
 
