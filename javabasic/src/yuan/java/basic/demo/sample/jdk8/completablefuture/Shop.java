@@ -15,20 +15,8 @@ public class Shop
 
     private double calculatePreice(String product)
     {
-        delay();
+        Util.delay();
         return new Random().nextDouble() * product.charAt(0) + product.charAt(1);
-    }
-
-    public static void delay()
-    {
-        try
-        {
-            Thread.sleep(1000l);
-        }
-        catch (InterruptedException e)
-        {
-            throw new RuntimeException(e);
-        }
     }
 
     public Future<Double> getPriceAsync(String product)
@@ -36,40 +24,46 @@ public class Shop
         CompletableFuture<Double> futurePrice = new CompletableFuture<>();
         new Thread(() -> {
             double price = calculatePreice(product);
-            System.out.println("current thread is "+Thread.currentThread()+"当前时间为 "+System.currentTimeMillis());
+            System.out.println("current thread is " + Thread.currentThread() + "当前时间为 " + System.currentTimeMillis());
             futurePrice.complete(price);
         }).start();
-        System.out.println("current thread is "+System.currentTimeMillis());
+        System.out.println("current thread is " + System.currentTimeMillis());
         return futurePrice;
     }
 
     public Future<Double> getPriceAsyncTwo(String product)
     {
         ExecutorService executor = Executors.newCachedThreadPool();
-        Future<Double> future = executor.submit(new Callable<Double>()
-        {
+        Future<Double> future = executor.submit(
+            new Callable<Double>()
+            {
                 @Override
                 public Double call()
                     throws Exception
                 {
                     double price = calculatePreice(product);
-                    System.out.println("current thread is "+Thread.currentThread()+"当前时间 k "+System.currentTimeMillis());
+                    System.out.println(
+                        "current thread is " + Thread.currentThread() + "当前时间 k " + System.currentTimeMillis());
                     return price;
                 }
             }
         );
-        System.out.println("current thread is  iiiiii "+System.currentTimeMillis());
+        System.out.println("current thread is  iiiiii " + System.currentTimeMillis());
         return future;
     }
 
-    public static void main(String[] args)
+    public static void getPrice()
     {
         Shop shop = new Shop();
+        long start = System.nanoTime();
         Future<Double> price = shop.getPriceAsync("hello world");
+        long invocationTime = ((System.nanoTime() - start) / 1_000_000);
+        System.out.println("Invocation returned after " + invocationTime + " msecs");
+
         try
         {
             double i = price.get();
-            System.out.println(i);
+            System.out.println(price);
         }
         catch (InterruptedException e)
         {
@@ -79,5 +73,17 @@ public class Shop
         {
             e.printStackTrace();
         }
+        long retrievalTime = ((System.nanoTime() - start) / 1_000_000);
+        System.out.println("Price returned after " + retrievalTime + " msecs");
+    }
+
+    public static void doSomethingElse()
+    {
+        System.out.println("return doSomethingElse");
+    }
+
+    public static void main(String[] args)
+    {
+        getPrice();
     }
 }
