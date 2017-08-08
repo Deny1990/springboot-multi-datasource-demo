@@ -1,5 +1,8 @@
 package com.yuan.proxy.jdkproxy;
 
+import com.yuan.proxy.ForumServiceTwo;
+import com.yuan.proxy.ForumServiceTwoImpl;
+
 import java.lang.reflect.Proxy;
 
 /**

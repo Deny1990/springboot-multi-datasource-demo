@@ -1,4 +1,4 @@
-package com.yuan.proxy.jdkproxy;
+package com.yuan.proxy;
 
 /**
  * Created by yuanxin on 17/8/8.
