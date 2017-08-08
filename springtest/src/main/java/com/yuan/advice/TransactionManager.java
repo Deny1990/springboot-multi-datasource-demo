@@ -13,7 +13,7 @@ public class TransactionManager implements ThrowsAdvice {
         System.out.println("---------");
         System.out.println("method:"+method.getName());
         System.out.println("抛出异常:"+ex.getMessage());
-        System.out.println("成功回滚食物。");
+        System.out.println("成功回滚事务。");
     }
 
 
