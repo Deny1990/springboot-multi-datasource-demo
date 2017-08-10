@@ -1,5 +1,10 @@
 package com.yuan.advice;
 
+import com.yuan.service.ForumService;
+import com.yuan.service.NaiveWaiter;
+import com.yuan.service.Waiter;
+import org.springframework.aop.BeforeAdvice;
+import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -10,7 +15,23 @@ public class AdviceTest {
         throws Exception
     {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-application.xml");
-        ForumService  forumService = (ForumService)context.getBean("forumService");
+        Waiter waiter = (Waiter)context.getBean("waiter");
+        waiter.serveTo("hello");
+        waiter.greetTo("world");
+
+        ForumService forumService = (ForumService)context.getBean("forumService");
         forumService.updateForum(11);
+
+        Waiter target = new NaiveWaiter();
+        BeforeAdvice advice = new GreetingBeforeAdvice();
+        ProxyFactory pf = new ProxyFactory();
+        pf.setTarget(target);
+        pf.addAdvice(advice);
+
+        Waiter proxy = (Waiter)pf.getProxy();
+        proxy.greetTo("john");
+        proxy.serveTo("tom");
+
+
     }
 }
