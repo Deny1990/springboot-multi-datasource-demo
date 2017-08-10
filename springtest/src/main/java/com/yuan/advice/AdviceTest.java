@@ -15,12 +15,15 @@ public class AdviceTest {
         throws Exception
     {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-application.xml");
+
+        ForumService forumService = (ForumService)context.getBean("forumService");
+        forumService.updateForum(11);
+
         Waiter waiter = (Waiter)context.getBean("waiter");
         waiter.serveTo("hello");
         waiter.greetTo("world");
 
-        ForumService forumService = (ForumService)context.getBean("forumService");
-        forumService.updateForum(11);
+
 
         Waiter target = new NaiveWaiter();
         BeforeAdvice advice = new GreetingBeforeAdvice();

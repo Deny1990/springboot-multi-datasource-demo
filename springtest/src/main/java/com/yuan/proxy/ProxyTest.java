@@ -2,6 +2,8 @@ package com.yuan.proxy;
 
 import com.yuan.proxy.cglib.CglibProxy;
 import com.yuan.proxy.jdkproxy.PerformanceHandler;
+import com.yuan.service.ForumServiceTwo;
+import com.yuan.service.ForumServiceTwoImpl;
 
 import java.lang.reflect.Proxy;
 
