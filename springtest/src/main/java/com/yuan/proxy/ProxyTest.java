@@ -14,10 +14,11 @@ public class ProxyTest
 {
     public static void main(String[] args)
     {
-
+//        testCglibProxy();
+        testJdkProxy();
     }
 
-    private void testCglibProxy()
+    private static void testCglibProxy()
     {
 
         CglibProxy proxy = new CglibProxy();
