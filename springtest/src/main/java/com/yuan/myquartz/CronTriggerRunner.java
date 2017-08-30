@@ -6,19 +6,20 @@ import org.quartz.impl.StdSchedulerFactory;
 import java.util.Date;
 
 /**
- * Created by yuanxin on 17/8/29.
+ * Created by yuanxin on 17/8/30.
  */
-public class SimpleTriggerRuner
+public class CronTriggerRunner
 {
     public static void main(String[] args)
     {
-        JobDetail jobDetail = JobBuilder.newJob(SimpleJob.class).withIdentity("job1_1", "jgroup1").build();
-        ScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.repeatSecondlyForTotalCount(3, 1);
+        JobDetail jobDetail = JobBuilder.newJob(SimpleJob.class).withIdentity("job1_2", "jgroup1").build();
+        ScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule("0/5 19 * * * ?");
         Trigger trigger = TriggerBuilder.newTrigger()
-            .withIdentity("trigger1_1", "tgroup1")
+            .withIdentity("trigger1_2", "tgroup1")
             .startAt(new Date())
             .withSchedule(scheduleBuilder)
             .build();
+
         SchedulerFactory schedulerFactory = new StdSchedulerFactory();
         try
         {
@@ -30,6 +31,5 @@ public class SimpleTriggerRuner
         {
             e.printStackTrace();
         }
-
     }
 }

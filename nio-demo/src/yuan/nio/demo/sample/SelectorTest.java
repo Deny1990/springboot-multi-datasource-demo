@@ -120,20 +120,20 @@ public class SelectorTest
                     SocketChannel sc = (SocketChannel)key.channel();
 
 // Echo data
-                    int bytesEchoed = 0;
-                    while (true)
-                    {
-                        echoBuffer.clear();
-
-                        int r = sc.read(echoBuffer);
-
-                        if (r <= 0)
+                        int bytesEchoed = 0;
+                        while (true)
                         {
-                            break;
-                        }
+                            echoBuffer.clear();
 
-                        echoBuffer.flip();
-                        sc.write(echoBuffer);
+                            int r = sc.read(echoBuffer);
+
+                            if (r <= 0)
+                            {
+                                break;
+                            }
+
+                            echoBuffer.flip();
+                            sc.write(echoBuffer);
                         bytesEchoed += r;
                     }
 
