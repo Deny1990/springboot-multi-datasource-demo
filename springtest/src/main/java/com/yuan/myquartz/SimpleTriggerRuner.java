@@ -13,7 +13,7 @@ public class SimpleTriggerRuner
     public static void main(String[] args)
     {
         JobDetail jobDetail = JobBuilder.newJob(SimpleJob.class).withIdentity("job1_1", "jgroup1").build();
-        ScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.repeatSecondlyForTotalCount(3, 1);
+        ScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.repeatSecondlyForTotalCount(10, 1);
         Trigger trigger = TriggerBuilder.newTrigger()
             .withIdentity("trigger1_1", "tgroup1")
             .startAt(new Date())
@@ -24,7 +24,9 @@ public class SimpleTriggerRuner
         {
             Scheduler scheduler = schedulerFactory.getScheduler();
             scheduler.scheduleJob(jobDetail, trigger);
+            System.out.println("scheduler start");
             scheduler.start();
+            System.out.println("scheduler end");
         }
         catch (SchedulerException e)
         {

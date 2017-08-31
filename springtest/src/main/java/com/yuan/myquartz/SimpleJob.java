@@ -14,6 +14,7 @@ public class SimpleJob implements Job
     public void execute(JobExecutionContext jobExecutionContext)
         throws JobExecutionException
     {
+        System.out.println("hello world");
         System.out.println(jobExecutionContext.getTrigger().getKey().getName() + "triggered.time is :" + (new Date()));
     }
 }
