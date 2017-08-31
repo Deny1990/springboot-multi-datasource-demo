@@ -3,6 +3,8 @@ package com.yuan.myquartz;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.quartz.impl.matchers.GroupMatcher;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Set;
@@ -12,6 +14,7 @@ import java.util.Set;
  */
 public class JDBCJobStoreRunner
 {
+    static Logger logger = LoggerFactory.getLogger(JDBCJobStoreRunner.class);
     public static void main(String args[]) {
         try {
             SchedulerFactory schedulerFactory = new StdSchedulerFactory();
@@ -30,7 +33,9 @@ public class JDBCJobStoreRunner
                 }
 
             }
+            System.out.println("start");
             scheduler.start();
+            System.out.println("scheduler end");
         } catch (Exception e) {
             e.printStackTrace();
         }
