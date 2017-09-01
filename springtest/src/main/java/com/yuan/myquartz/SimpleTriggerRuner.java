@@ -18,10 +18,11 @@ public class SimpleTriggerRuner
     public static void main(String[] args)
         throws ParseException
     {
+
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         Date date = simpleDateFormat.parse("20170831191830");
         JobDetail jobDetail = JobBuilder.newJob(SimpleJob.class).withIdentity("job1_1", "jgroup1").build();
-        ScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.repeatSecondlyForTotalCount(10, 1);
+        ScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.repeatSecondlyForTotalCount(100, 5);
         Trigger trigger = TriggerBuilder.newTrigger()
             .withIdentity("trigger1_1", "tgroup1")
             .startNow()
@@ -32,10 +33,8 @@ public class SimpleTriggerRuner
         {
             Scheduler scheduler = schedulerFactory.getScheduler();
             scheduler.scheduleJob(jobDetail, trigger);
-            System.out.println("scheduler start");
+            logger.info("scheduler start");
             scheduler.start();
-            System.out.println("scheduler end");
-//            scheduler.shutdown();
             logger.info("scheduler hello");
         }
         catch (SchedulerException e)
