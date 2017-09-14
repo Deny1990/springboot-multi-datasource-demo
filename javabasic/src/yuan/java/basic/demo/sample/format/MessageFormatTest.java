@@ -3,6 +3,7 @@ package yuan.java.basic.demo.sample.format;
 import java.text.MessageFormat;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * Created by yuanxin on 17/9/14.
@@ -23,4 +24,6 @@ public class MessageFormatTest
         System.out.println(msg1);
         System.out.println(msg2);
     }
+
+
 }
