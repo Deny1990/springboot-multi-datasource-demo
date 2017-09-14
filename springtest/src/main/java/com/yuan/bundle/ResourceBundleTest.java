@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 import java.io.BufferedWriter;
@@ -59,14 +59,15 @@ public class ResourceBundleTest
 
     private static void updateFile(String fileName,Map<String, String> keyValueMap)
     {
-        String filePath = ResourceBundleTest.class.getClassLoader().getResource(fileName).getFile();
+//        String filePath = ResourceBundleTest.class.getClassLoader().getResource(fileName).getFile();
+        String filePath = "/Users/yuanxin/项目/springboot-multi-datasource-demo/springtest/src/main/resources/"+fileName;
         Properties props = null;
         BufferedWriter bw = null;
 
         try {
             filePath = URLDecoder.decode(filePath,"utf-8");
             log.debug("updateProperties propertiesPath:" + filePath);
-            props = PropertiesLoaderUtils.loadProperties(new ClassPathResource(fileName));
+            props = PropertiesLoaderUtils.loadProperties(new FileSystemResource(filePath));
             log.debug("updateProperties old:"+props);
 
             // 写入属性文件
