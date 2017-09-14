@@ -12,9 +12,10 @@
 
 
     <root>
-        <level value="info" />
+        <level value="debug" />
         <appender-ref ref="default" />
     </root>
 
+    <logger name="org.springframework" level="debug"/>
 
 </log4j:configuration>
