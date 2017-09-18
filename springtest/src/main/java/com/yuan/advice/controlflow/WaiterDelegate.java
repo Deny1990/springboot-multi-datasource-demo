@@ -11,8 +11,8 @@ public class WaiterDelegate
 
     public void service(String clientName)
     {
-        waiter.greetTo(clientName);
         waiter.serveTo(clientName);
+        waiter.greetTo(clientName);
     }
 
     public Waiter getWaiter()
