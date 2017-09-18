@@ -21,4 +21,5 @@
           p:interceptorNames="greetingAround"
           p:target-ref="target"
     />
+
 </beans>
