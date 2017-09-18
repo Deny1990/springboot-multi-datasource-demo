@@ -7,14 +7,18 @@ import org.springframework.aop.Pointcut;
 import org.springframework.aop.support.ComposablePointcut;
 import org.springframework.aop.support.ControlFlowPointcut;
 import org.springframework.aop.support.NameMatchMethodPointcut;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by yuanxin on 17/9/18.
  */
+@Component
 public class GreetingComposablePointcut
 {
     Logger logger = LoggerFactory.getLogger(GreetingComposablePointcut.class);
 
+    @Bean("pointCut")
     public Pointcut getIntersectionPointcut()
     {
         ComposablePointcut cp = new ComposablePointcut();

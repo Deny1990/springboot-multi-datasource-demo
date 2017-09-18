@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <import resource="spring-application.xml"/>
     <!--定义复合切面-->
     <bean id="gcp" class="com.yuan.advice.composable.GreetingComposablePointcut"/>
     <bean id="composableAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor"
-          p:pointcut="#{gcp.intersectionPointcut}"
+          p:pointcut= "#{gcp.intersectionPointcut}"
           p:advice-ref="greetingAdvice"
     />
 
@@ -16,4 +18,6 @@
           p:proxyTargetClass="true"
     />
 
+    <!--<context:annotation-config/>-->
+    <context:component-scan base-package="com.yuan.*"/>
 </beans>
