@@ -7,6 +7,8 @@
           <file>file://$MODULE_DIR$/src/main/resources/spring-application.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/spring-bundle.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/spring-controlflow.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring-composable.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/yuan/advice/composable/spring-composable.xml</file>
         </fileset>
       </configuration>
     </facet>
