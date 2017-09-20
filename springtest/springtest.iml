@@ -9,6 +9,7 @@
           <file>file://$MODULE_DIR$/src/main/resources/spring-controlflow.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/spring-composable.xml</file>
           <file>file://$MODULE_DIR$/src/main/java/com/yuan/advice/composable/spring-composable.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring-args.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -38,5 +39,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.3.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.3.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.10" level="project" />
   </component>
 </module>
