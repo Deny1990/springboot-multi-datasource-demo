@@ -18,7 +18,9 @@ public class ArgsAspectTest
 
         ArgsModel argsModel = (ArgsModel)context.getBean("argsModel");
         ParentModel parentModel = (ParentModel)context.getBean("parentModel");
+        ToneModel toneModel = (ToneModel)context.getBean("toneModel");
         argsModel.testArgs(parentModel);
+        argsModel.testArgs(toneModel);
     }
 
 }
