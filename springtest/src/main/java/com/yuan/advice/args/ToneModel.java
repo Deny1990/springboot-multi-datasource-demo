@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
  * Created by yuanxin on 17/9/20.
  */
 @Component("toneModel")
+@PrintArgs(name = "toneModel")
 public class ToneModel extends ParentModel
 {
     Logger logger = LoggerFactory.getLogger(ToneModel.class);
