@@ -18,7 +18,7 @@ public class ArgsAspect
 {
     Logger logger = LoggerFactory.getLogger(ArgsAspect.class);
 
-    @Before("@args(com.yuan.advice.args.PrintArgs)")
+    @Before("@args(PrintArgs)")
     public void printArgs(JoinPoint joinPoint)
     {
         logger.info("{},此方法入参数标注了PrintArgs注解",joinPoint.getSignature());

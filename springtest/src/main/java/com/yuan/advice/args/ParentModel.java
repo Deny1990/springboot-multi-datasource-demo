@@ -8,11 +8,12 @@ import org.springframework.stereotype.Component;
  * Created by yuanxin on 17/9/20.
  */
 @Component
+@PrintArgs(name = "parmentModel")
 public class ParentModel
 {
     Logger logger = LoggerFactory.getLogger(ParentModel.class);
 
-    public void methodA(@PrintArgs(name = "parentMehod") String name)
+    public void methodA(String hello)
     {
         logger.info("parmentModel method");
     }

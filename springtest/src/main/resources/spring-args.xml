@@ -7,10 +7,9 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <context:component-scan base-package="com.yuan.advice.args" />
     <aop:aspectj-autoproxy proxy-target-class="true"/>
-
+</beans>
     <!--<bean id="parentModel" class="com.yuan.advice.args.ParentModel"/>-->
     <!--<bean id="toneModel" class="com.yuan.advice.args.ToneModel"/>-->
     <!--<bean id="twoModel" class="com.yuan.advice.args.TtwoModel"/>-->
 
 
-</beans>
