@@ -17,10 +17,13 @@ public class ArgsAspectTest
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-args.xml");
 
         ArgsModel argsModel = (ArgsModel)context.getBean("argsModel");
-        ParentModel parentModel = (ParentModel)context.getBean("parentModel");
+//        ParentModel parentModel = (ParentModel)context.getBean("parentModel");
         ToneModel toneModel = (ToneModel)context.getBean("toneModel");
-        argsModel.testArgs(parentModel);
-        argsModel.testArgs(toneModel);
+//        argsModel.testParentArgs(parentModel);
+        argsModel.testParentArgs(toneModel);
+//        argsModel.testTontModelArgs(toneModel);
+
+
     }
 
 }
