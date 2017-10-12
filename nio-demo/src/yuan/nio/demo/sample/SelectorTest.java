@@ -78,6 +78,7 @@ public class SelectorTest
         {
             ServerSocketChannel ssc = ServerSocketChannel.open();
             ssc.configureBlocking(false);
+
             ServerSocket ss = ssc.socket();
             InetSocketAddress address = new InetSocketAddress(ports[i]);
             ss.bind(address);
