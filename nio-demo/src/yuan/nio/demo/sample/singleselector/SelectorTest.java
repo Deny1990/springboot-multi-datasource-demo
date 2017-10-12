@@ -1,4 +1,4 @@
-package yuan.nio.demo.sample;
+package yuan.nio.demo.sample.singleselector;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
