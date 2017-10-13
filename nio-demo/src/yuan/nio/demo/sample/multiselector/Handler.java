@@ -17,7 +17,7 @@ import static yuan.nio.demo.sample.multiselector.ServerContext.useThreadPool;
 /**
  * Created by yuanxin on 17/10/12.
  */
-public abstract class Handler extends Thread
+public abstract class Handler
 {
     Logger log = LoggerFactory.getLogger(Handler.class);
 
@@ -70,8 +70,7 @@ public abstract class Handler extends Thread
         log.info(selector + " connect success...");
     }
 
-    @Override
-    public void run()
+    public void handle()
     {
         switch (state)
         {
