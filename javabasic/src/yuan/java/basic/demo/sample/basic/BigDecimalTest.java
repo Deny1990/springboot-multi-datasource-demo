@@ -9,9 +9,9 @@ public class BigDecimalTest
 {
     public static void main(String[] args)
     {
-        BigDecimal bigDecimal = new BigDecimal("2570061");
-        BigDecimal divBigDecimal = bigDecimal.divide(BigDecimal.valueOf(100),2,BigDecimal.ROUND_DOWN);
-        System.out.println(divBigDecimal);
+//        BigDecimal bigDecimal = new BigDecimal("2570061");
+//        BigDecimal divBigDecimal = bigDecimal.divide(BigDecimal.valueOf(100),2,BigDecimal.ROUND_DOWN);
+        System.out.println("hello,wold");
 
     }
 }

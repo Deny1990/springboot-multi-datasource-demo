@@ -25,4 +25,10 @@ public class Car
     {
         System.out.println("CurrentThread is "+Thread.currentThread()+"car name is "+ this.name);
     }
+
+    public static void main(String[] args) {
+        Car car = new Car("benchi","songgang");
+
+
+    }
 }
