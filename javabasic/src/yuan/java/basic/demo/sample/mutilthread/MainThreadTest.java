@@ -1,4 +1,4 @@
-package yuan.java.basic.demo.sample;
+package yuan.java.basic.demo.sample.mutilthread;
 
 /**
  * Created by yuanxin on 17/9/1.
