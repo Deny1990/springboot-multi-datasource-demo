@@ -12,7 +12,7 @@ public class DateTest
     public static void main(String[] args)
     {
         Date createDate = new Date();
-        DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+        DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
         System.out.println(df.format(createDate));
         DateFormat tf = new SimpleDateFormat("HH:mm:ss");
         System.out.println(tf.format(createDate));
