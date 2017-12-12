@@ -13,7 +13,9 @@ public class FailSafeExample
         ConcurrentHashMap <String,String> premiumPhone =
             new ConcurrentHashMap<String,String>();
         premiumPhone.put("Apple", "iPhone");
-        premiumPhone.put("HTC", "HTC one");
+        premiumPhone.put("HTC", "HTC Two");
+        String value = premiumPhone.put("HTC", "HTC one");
+        System.out.println(value);
         premiumPhone.put("Samsung","S5");
 
         Iterator iterator = premiumPhone.keySet().iterator();
