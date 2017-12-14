@@ -43,6 +43,9 @@ public class CasTest
                 sizeCtl = 4;
             }
         }
+         int NCPU = Runtime.getRuntime().availableProcessors();
+
+        System.out.println(NCPU);
         System.out.println(sizeCtl);
 
     }
