@@ -3,24 +3,20 @@ package yuan.java.basic.demo.sample.algorithm;
 /**
  * Created by yuanxin on 17/12/18.
  */
-public class LinkedListTest
-{
+public class LinkedListTest {
     /*
      * @param head: a ListNode
      * @param val: An integer
      * @return: a ListNode
      */
-    public ListNode removeElements(ListNode head, int val)
-    {
+    public ListNode removeElements(ListNode head, int val) {
         // write your code here
-        if (head == null)
-        {
+        if (head == null) {
             return null;
         }
         int i = 0;
         ListNode p = head;
-        while (p != null)
-        {
+        while (p != null) {
             p = p.next;
             i++;
         }
@@ -28,26 +24,27 @@ public class LinkedListTest
         int j = 0;
 
         p = head;
-        while (p != null)
-        {
-            if (p.val != val)
-            {
+        while (p != null) {
+            if (p.val != val) {
                 listnodes[j] = new ListNode(p.val);
                 j++;
             }
             p = p.next;
 
         }
-        for (int k = 1; k < j; k++)
-        {
-            listnodes[k-1].next = listnodes[k-2];
+        for (int k = 1; k < j; k++) {
+            listnodes[k - 1].next = listnodes[k];
+        }
+        ListNode h = listnodes[0];
+        while(h != null){
+            System.out.println(h.val);
+            h=h.next;
         }
         return listnodes[0];
 
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
         ListNode node3 = new ListNode(6);

@@ -13,13 +13,22 @@ public class MoveBitTest {
         System.out.println("hashCode 为:");
         printBinaryInt(hashCode);
         int hash = spread(hashCode);
+        System.out.println("hash 为:");
         printBinaryInt(hash);
 
         int n = 16;
+        System.out.println("n-1");
         printBinaryInt(n-1);
+        System.out.println("n");
+        printBinaryInt(n);
+        System.out.println("(n-1)&hash");
         int i = (n-1)&hash;
+        System.out.println("i ="+i);
         printBinaryInt(i);
-        System.out.println(i);
+        System.out.println("(n)&hash");
+        int in = (n)&hash;
+        printBinaryInt(in);
+
     }
 
     public static void printBinaryInt(int i) {
