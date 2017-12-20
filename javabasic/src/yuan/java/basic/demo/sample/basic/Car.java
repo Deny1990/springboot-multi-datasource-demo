@@ -18,6 +18,9 @@ public class Car
     {
         this.name = name;
     }
+    public Car( )
+    {
+    }
     public synchronized void changeData()
     {
         this.name = "falali";
@@ -55,13 +58,13 @@ public class Car
         this.address = address;
     }
 
-    @Override
-    public String toString()
-    {
-        final StringBuffer sb = new StringBuffer("Car{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", address='").append(address).append('\'');
-        sb.append('}');
-        return sb.toString();
-    }
+//    @Override
+//    public String toString()
+//    {
+//        final StringBuffer sb = new StringBuffer("Car   {");
+//        sb.append("name='").append(name).append('\'');
+//        sb.append(", address='").append(address).append('\'');
+//        sb.append('}');
+//        return sb.toString();
+//    }
 }
