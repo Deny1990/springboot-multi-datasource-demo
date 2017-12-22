@@ -8,15 +8,6 @@ import java.lang.reflect.Method;
  */
 public class BenchiCar extends Car
 {
-    @Override
-    public String toString()
-    {
-        final StringBuffer sb = new StringBuffer("BenchiCar{");
-        sb.append('}');
-        sb.append(this.getName());
-        return sb.toString();
-    }
-
     public static void main(String[] args)
     {
         try
@@ -41,4 +32,5 @@ public class BenchiCar extends Car
             e.printStackTrace();
         }
     }
+
 }
