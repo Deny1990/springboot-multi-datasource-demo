@@ -59,6 +59,7 @@ public class ScheduledServiceTest
         }
         RethrowableTask task = new RethrowableTask();
 
+        System.out.println("before taskThread is "+Thread.currentThread().getName());
         final Thread taskThread = new Thread(task);
         taskThread.start();
 
@@ -80,14 +81,20 @@ public class ScheduledServiceTest
 
     public static void main(String[] args)
     {
-        timeRun(new Runnable()
+        try
         {
-            @Override
-            public void run()
+            timeRun2(new Runnable()
             {
-                System.out.println(Thread.currentThread().getName());
-            }
-        }, 1, TimeUnit.SECONDS);
+                @Override
+                public void run()
+                {
+                    System.out.println("run2"+Thread.currentThread().getName());
+                }
+            }, 1, TimeUnit.SECONDS);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
     }
 
 
