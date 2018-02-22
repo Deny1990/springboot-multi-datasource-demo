@@ -26,7 +26,8 @@ public class test
         int c = a + b;
         System.out.println(c);
         int[] targethash = new int[256];
-        minWindow("ADOBECODEBANC","ABC");
+//        minWindow("ADOBECODEBANC","ABC");
+        minWindow("OAOBECADEBC","ABC");
 
 
     }
